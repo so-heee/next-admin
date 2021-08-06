@@ -25,3 +25,9 @@ yarn create next-app --ts
 ```:bash
 mkdir src && mv pages src && mv styles src
 ```
+
+## 3. typescript の設定追加
+
+```:bash
+yarn add --dev typescript @types/react @types/react-dom @types/node
+```
