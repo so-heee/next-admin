@@ -31,3 +31,29 @@ mkdir src && mv pages src && mv styles src
 ```:bash
 yarn add --dev typescript @types/react @types/react-dom @types/node
 ```
+
+## 4. tsconfig.json を修正
+
+## 5. eslint + prettier の導入
+
+vscode の設定
+
+- code-基本設定-設定-ワークスペース-拡張機能-setting.json で編集から.vscode/setting.json を作成
+- extensions.json を作成
+
+```:bash
+yarn add -D prettier eslint-config-prettier
+```
+
+※eslint は初期設定されている eslint-config-next を利用する
+
+以下のファイルを作成、修正
+
+- .eslintrc
+- .eslintignore
+- .prettierrc
+- .prettierignore
+
+TODO:eslint の設定整理（import のソートとか）
+
+<https://fwywd.com/tech/next-eslint-prettier>
