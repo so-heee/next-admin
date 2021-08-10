@@ -5,8 +5,8 @@
 - Storybook
 - ESLint
 - Prettier
-- Husky
-- lint-staged
+- Husky（Git hooks が簡単にできるパッケージ）
+- lint-staged（ステージングしたファイルに対し、特定のコマンドが実行できるパッケージ）
 - Jest (Unit テスト + Snapshot)
 - storycap + reg-suit(ビジュアルリグレッションテスト)
 
@@ -45,7 +45,7 @@ vscode の設定
 yarn add -D prettier eslint-config-prettier
 ```
 
-※eslint は初期設定されている eslint-config-next を利用する
+※eslint は初期設定されている [https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/index.js](eslint-config-next) を利用する
 その他必要な eslint のルールは個別で設定
 
 以下のファイルを作成、修正
@@ -54,3 +54,32 @@ yarn add -D prettier eslint-config-prettier
 - .eslintignore
 - .prettierrc
 - .prettierignore
+
+## 6. lint-staged + husky の導入
+
+```:bash
+yarn add --dev husky lint-staged
+```
+
+- lint-staged の設定を package.json に追加
+
+```:json
+ "lint-staged": {
+   "*.@(ts|tsx)": [
+     "yarn lint",
+     "yarn format",
+     "yarn lint:fix"
+   ]
+ },
+```
+
+- husky の設定追加
+
+```:bash
+yarn husky install
+```
+
+.husky のディレクトリが作成されるので以下のファイルを作成
+
+- .husky/pre-commit
+- .husky/pre-push
