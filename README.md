@@ -83,3 +83,9 @@ yarn husky install
 
 - .husky/pre-commit
 - .husky/pre-push
+
+## 7. material-ui の導入
+
+```:bash
+yarn add @material-ui/core @material-ui/icons
+```
