@@ -46,6 +46,7 @@ yarn add -D prettier eslint-config-prettier
 ```
 
 ※eslint は初期設定されている eslint-config-next を利用する
+その他必要な eslint のルールは個別で設定
 
 以下のファイルを作成、修正
 
@@ -53,7 +54,3 @@ yarn add -D prettier eslint-config-prettier
 - .eslintignore
 - .prettierrc
 - .prettierignore
-
-TODO:eslint の設定整理（import のソートとか）
-
-<https://fwywd.com/tech/next-eslint-prettier>
