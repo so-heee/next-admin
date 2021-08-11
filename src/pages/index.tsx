@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 import { hello } from '../test'
 
 export default function Home() {
-  hello(12)
+  hello('12')
 
   return (
     <div className={styles.container}>
