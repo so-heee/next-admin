@@ -77,12 +77,9 @@ yarn add --dev husky lint-staged
 
 ```:bash
 yarn husky install
+yarn husky add .husky/pre-commit "yarn lint-staged"
+yarn husky add .husky/pre-push "yarn type-check"
 ```
-
-.husky のディレクトリが作成されるので以下のファイルを作成
-
-- .husky/pre-commit
-- .husky/pre-push
 
 ## 7. material-ui の導入
 
