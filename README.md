@@ -12,7 +12,9 @@
 
 ## 参考
 
-<https://zenn.dev/nus3/articles/257d724e24a39b756b5a>
+[https://zenn.dev/nus3/articles/257d724e24a39b756b5a](ぼくのかんがえたNext.jsの構成)
+[https://material-app.bootlab.io/pages/profile](デザイン参考)
+[https://ryotarch.com/javascript/react/next-js-with-csr/](Next.jsでCSRアプリを実装する)
 
 ## 1. プロジェクトを作成
 
@@ -86,3 +88,7 @@ yarn husky add .husky/pre-push "yarn type-check"
 ```:bash
 yarn add @material-ui/core @material-ui/icons
 ```
+
+## 8. Next.js の CSR(SPA)化
+
+\_app.tsx を変更する
