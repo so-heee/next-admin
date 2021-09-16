@@ -10,9 +10,6 @@ export const theme = createTheme({
     secondary: {
       main: colors.blueGrey[800],
     },
-    background: {
-      default: '#F7F9FC',
-    },
   },
 })
 

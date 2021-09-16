@@ -92,3 +92,5 @@ yarn add @material-ui/core @material-ui/icons
 ## 8. Next.js の CSR(SPA)化
 
 \_app.tsx を変更する
+
+## 9. テンプレートを作成し、メニューを作る

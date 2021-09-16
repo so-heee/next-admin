@@ -39,7 +39,9 @@ import {
 import MailIcon from '@material-ui/icons/Mail'
 import MenuIcon from '@material-ui/icons/Menu'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
+import Link from 'next/link'
 import React from 'react'
+import LeftDrawer from 'components/organisms/LeftDrawer'
 import { theme } from 'styles/theme'
 
 const drawerWidth = 240
@@ -97,113 +99,10 @@ export default function ResponsiveDrawer(props: Props) {
   const classes = useStyles()
   // const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [open, setOpen] = React.useState(true)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
   }
-
-  const handleClick = () => {
-    setOpen(!open)
-  }
-
-  const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List
-        subheader={
-          <ListSubheader component="div" id="nested-list-subheader">
-            Operations
-          </ListSubheader>
-        }
-      >
-        <ListItem button>
-          <ListItemIcon>
-            <Dashboard />
-          </ListItemIcon>
-          <ListItemText primary="ダッシュボード" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <Person />
-          </ListItemIcon>
-          <ListItemText primary="ユーザー" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <LocationOn />
-          </ListItemIcon>
-          <ListItemText primary="スポット" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <Language />
-          </ListItemIcon>
-          <ListItemText primary="エリア" />
-        </ListItem>
-        <ListItem button onClick={handleClick}>
-          <ListItemIcon>
-            <Category />
-          </ListItemIcon>
-          <ListItemText primary="カテゴリ" />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" dense>
-            <ListItem button>
-              <ListItemText inset primary="大カテゴリ" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText inset primary="中カテゴリ" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText inset primary="小カテゴリ" />
-            </ListItem>
-          </List>
-        </Collapse>
-        <ListItem button>
-          <ListItemIcon>
-            <Sms />
-          </ListItemIcon>
-          <ListItemText primary="口コミ" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <LocalOffer />
-          </ListItemIcon>
-          <ListItemText primary="ハッシュタグ" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <Notifications />
-          </ListItemIcon>
-          <ListItemText primary="お知らせ" />
-        </ListItem>
-      </List>
-      <Divider />
-      <List
-        subheader={
-          <ListSubheader component="div" id="nested-list-subheader">
-            Management
-          </ListSubheader>
-        }
-      >
-        <ListItem button>
-          <ListItemIcon>
-            <AccountCircle />
-          </ListItemIcon>
-          <ListItemText primary="アカウント管理" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <History />
-          </ListItemIcon>
-          <ListItemText primary="アクティビティ" />
-        </ListItem>
-      </List>
-    </div>
-  )
 
   const container =
     window !== undefined ? () => window().document.body : undefined
@@ -261,7 +160,7 @@ export default function ResponsiveDrawer(props: Props) {
                 keepMounted: true, // Better open performance on mobile.
               }}
             >
-              {drawer}
+              <LeftDrawer />
             </Drawer>
           </Hidden>
           <Hidden xsDown implementation="css">
@@ -272,7 +171,7 @@ export default function ResponsiveDrawer(props: Props) {
               variant="permanent"
               open
             >
-              {drawer}
+              <LeftDrawer />
             </Drawer>
           </Hidden>
         </nav>
@@ -287,6 +186,7 @@ export default function ResponsiveDrawer(props: Props) {
           >
             {title}
           </Typography>
+          <Divider />
           {children}
         </main>
       </div>
